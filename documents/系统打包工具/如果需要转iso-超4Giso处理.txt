@@ -1,0 +1,37 @@
+3.1、解压.sblive文件:
+
+root@yankerp-virtual-machine:~# mkdir sblive
+root@yankerp-virtual-machine:~# tar -xf /home/systemback_live_2016-04-27.sblive -C sblive
+
+    1
+    2
+
+3.2、重命名 syslinux 至 isolinux:
+
+root@yankerp-virtual-machine:~# mv sblive/syslinux/syslinux.cfg sblive/syslinux/isolinux.cfg
+root@yankerp-virtual-machine:~# mv sblive/syslinux sblive/isolinux
+
+    1
+    2
+
+3.3、安装cdtools
+
+root@yankerp-virtual-machine:~# aria2c -s 10 https://nchc.dl.sourceforge.net/project/cdrtools/alpha/cdrtools-3.02a07.tar.gz
+root@yankerp-virtual-machine:~# tar -xzvf cdrtools-3.02a07.tar.gz
+root@yankerp-virtual-machine:~# cd cdrtools-3.02
+root@yankerp-virtual-machine:~# make
+root@yankerp-virtual-machine:~# sudo make install
+
+    1
+    2
+    3
+    4
+    5
+
+3.4、生成 ISO 文件:
+
+root@yankerp-virtual-machine:~# /opt/schily/bin/mkisofs -iso-level 3 -r -V sblive -cache-inodes -J -l -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -c isolinux/boot.cat -o sblive.iso sblive
+
+    1
+
+

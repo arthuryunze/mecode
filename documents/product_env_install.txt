@@ -1,0 +1,21 @@
+minimal install and third drivers
+
+change soft source
+install nvidia driver 470
+
+reboot
+
+install cuda 10.2
+
+reboot
+
+sudo apt install libcudnn8 libcudnn8-dev libjpeg-dev
+
+set cuda path in bashrc
+
+
+torchvision
+
+cmake .. -DCMAKE_PREFIX_PATH=/home/yunze/Downloads/libtorch-cxx11-abi-shared-with-deps-1.12.0+cu102/libtorch
+
+make && sudo make install

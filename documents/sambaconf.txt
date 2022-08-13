@@ -1,0 +1,50 @@
+sudo chown -R zhaopeng.zhaopeng 赵鹏
+
+sudo chmod -R 700 赵鹏
+
+sudo setfacl -R -m u:zhaopeng:rwx 赵鹏
+
+sudo setfacl -R -m u:yunze:rx 赵鹏
+
+
+sudo useradd -s /sbin/nologin jishubu
+
+
+sudo gpasswd -a yunze jishubu 
+Adding user yunze to group jishubu
+
+
+
+sudo pdbedit -a -u tangpeng
+
+new password:
+retype new password:
+Unix username:        tangpeng
+NT username:          
+Account Flags:        [U          ]
+User SID:             S-1-5-21-629666818-3092742780-4293776168-1016
+Primary Group SID:    S-1-5-21-629666818-3092742780-4293776168-513
+Full Name:            
+Home Directory:       \\sy-sv\tangpeng
+HomeDir Drive:        
+Logon Script:         
+Profile Path:         \\sy-sv\tangpeng\profile
+Domain:               SY-SV
+Account desc:         
+Workstations:         
+Munged dial:          
+Logon time:           0
+Logoff time:          三, 06 2月 2036 23:06:39 CST
+Kickoff time:         三, 06 2月 2036 23:06:39 CST
+Password last set:    三, 27 7月 2022 17:21:39 CST
+Password can change:  三, 27 7月 2022 17:21:39 CST
+Password must change: never
+Last bad password   : 0
+Bad password count  : 0
+Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+
+sudo systemctl restart smbd.service
+
+

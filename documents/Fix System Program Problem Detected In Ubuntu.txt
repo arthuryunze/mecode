@@ -1,0 +1,4 @@
+ls -l /var/crash
+
+
+change /etc/default/apport enabled=0

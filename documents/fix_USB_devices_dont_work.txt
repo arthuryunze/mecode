@@ -1,0 +1,275 @@
+repeat my question: My PC all USB device is don't work now, I just have to connect it use SSH on another PC. I installed realsense camera sdk before, it  may changed some udev rules, then I delete /usr/local/lib/libusb*,then all USB devices didn't work after a reboot.
+
+
+
+sudo apt-get install xserver-xorg-input-all
+
+
+
+that's output bellow.
+
+sy@sy ~> sudo apt-get install xserver-xorg-input-all
+         
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-5.4.0-120-generic linux-hwe-5.4-headers-5.4.0-120
+  linux-image-5.4.0-120-generic linux-modules-5.4.0-120-generic
+  linux-modules-extra-5.4.0-120-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  xserver-xorg-core xserver-xorg-input-libinput xserver-xorg-input-wacom
+Suggested packages:
+  xfonts-100dpi | xfonts-75dpi xinput
+The following packages will be REMOVED:
+  xserver-xorg-core-hwe-18.04
+The following NEW packages will be installed:
+  xserver-xorg-core xserver-xorg-input-all xserver-xorg-input-libinput
+  xserver-xorg-input-wacom
+0 upgraded, 4 newly installed, 1 to remove and 2 not upgraded.
+Need to get 1,478 kB of archives.
+After this operation, 526 kB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 http://mirrors.aliyun.com/ubuntu bionic-security/main amd64 xserver-xorg-core amd64 2:1.19.6-1ubuntu4.10 [1,351 kB]
+Get:2 http://mirrors.aliyun.com/ubuntu bionic/main amd64 xserver-xorg-input-libinput amd64 0.27.1-1 [33.2 kB]
+Get:3 http://mirrors.aliyun.com/ubuntu bionic-updates/main amd64 xserver-xorg-input-all amd64 1:7.7+19ubuntu7.1 [4,112 B]
+Get:4 http://mirrors.aliyun.com/ubuntu bionic-updates/main amd64 xserver-xorg-input-wacom amd64 1:0.36.1-0ubuntu1.1 [89.8 kB]
+Fetched 1,478 kB in 5s (318 kB/s)               
+dpkg: xserver-xorg-core-hwe-18.04: dependency problems, but removing anyway as you requested:
+ xserver-xorg-video-nvidia-515 depends on xorg-video-abi-26 | xorg-video-abi-25 | xorg-video-abi-24 | xorg-video-abi-23 | xorg-video-abi-20 | xorg-video-abi-19 | xorg-video-abi-18 | xorg-video-abi-15 | xorg-video-abi-14 | xorg-video-abi-13 | xorg-video-abi-12 | xorg-video-abi-11 | xorg-video-abi-10 | xorg-video-abi-8 | xorg-video-abi-6.0; however:
+  Package xorg-video-abi-26 is not installed.
+  Package xorg-video-abi-25 is not installed.
+  Package xorg-video-abi-24 is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xorg-video-abi-24 is to be removed.
+  Package xorg-video-abi-23 is not installed.
+  Package xorg-video-abi-20 is not installed.
+  Package xorg-video-abi-19 is not installed.
+  Package xorg-video-abi-18 is not installed.
+  Package xorg-video-abi-15 is not installed.
+  Package xorg-video-abi-14 is not installed.
+  Package xorg-video-abi-13 is not installed.
+  Package xorg-video-abi-12 is not installed.
+  Package xorg-video-abi-11 is not installed.
+  Package xorg-video-abi-10 is not installed.
+  Package xorg-video-abi-8 is not installed.
+  Package xorg-video-abi-6.0 is not installed.
+ xserver-xorg-video-nvidia-515 depends on xserver-xorg-core (>= 2:1.19.6-1ubuntu2~) | xserver-xorg-core-hwe-18.04; however:
+  Package xserver-xorg-core is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xserver-xorg-core is to be removed.
+  Package xserver-xorg-core-hwe-18.04 is to be removed.
+ xserver-xorg-video-nvidia-515 depends on xorg-video-abi-26 | xorg-video-abi-25 | xorg-video-abi-24 | xorg-video-abi-23 | xorg-video-abi-20 | xorg-video-abi-19 | xorg-video-abi-18 | xorg-video-abi-15 | xorg-video-abi-14 | xorg-video-abi-13 | xorg-video-abi-12 | xorg-video-abi-11 | xorg-video-abi-10 | xorg-video-abi-8 | xorg-video-abi-6.0; however:
+  Package xorg-video-abi-26 is not installed.
+  Package xorg-video-abi-25 is not installed.
+  Package xorg-video-abi-24 is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xorg-video-abi-24 is to be removed.
+  Package xorg-video-abi-23 is not installed.
+  Package xorg-video-abi-20 is not installed.
+  Package xorg-video-abi-19 is not installed.
+  Package xorg-video-abi-18 is not installed.
+  Package xorg-video-abi-15 is not installed.
+  Package xorg-video-abi-14 is not installed.
+  Package xorg-video-abi-13 is not installed.
+  Package xorg-video-abi-12 is not installed.
+  Package xorg-video-abi-11 is not installed.
+  Package xorg-video-abi-10 is not installed.
+  Package xorg-video-abi-8 is not installed.
+  Package xorg-video-abi-6.0 is not installed.
+ xserver-xorg-video-nvidia-515 depends on xserver-xorg-core (>= 2:1.19.6-1ubuntu2~) | xserver-xorg-core-hwe-18.04; however:
+  Package xserver-xorg-core is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xserver-xorg-core is to be removed.
+  Package xserver-xorg-core-hwe-18.04 is to be removed.
+ xserver-xorg-video-nvidia-515 depends on xorg-video-abi-26 | xorg-video-abi-25 | xorg-video-abi-24 | xorg-video-abi-23 | xorg-video-abi-20 | xorg-video-abi-19 | xorg-video-abi-18 | xorg-video-abi-15 | xorg-video-abi-14 | xorg-video-abi-13 | xorg-video-abi-12 | xorg-video-abi-11 | xorg-video-abi-10 | xorg-video-abi-8 | xorg-video-abi-6.0; however:
+  Package xorg-video-abi-26 is not installed.
+  Package xorg-video-abi-25 is not installed.
+  Package xorg-video-abi-24 is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xorg-video-abi-24 is to be removed.
+  Package xorg-video-abi-23 is not installed.
+  Package xorg-video-abi-20 is not installed.
+  Package xorg-video-abi-19 is not installed.
+  Package xorg-video-abi-18 is not installed.
+  Package xorg-video-abi-15 is not installed.
+  Package xorg-video-abi-14 is not installed.
+  Package xorg-video-abi-13 is not installed.
+  Package xorg-video-abi-12 is not installed.
+  Package xorg-video-abi-11 is not installed.
+  Package xorg-video-abi-10 is not installed.
+  Package xorg-video-abi-8 is not installed.
+  Package xorg-video-abi-6.0 is not installed.
+ xserver-xorg-video-nvidia-515 depends on xserver-xorg-core (>= 2:1.19.6-1ubuntu2~) | xserver-xorg-core-hwe-18.04; however:
+  Package xserver-xorg-core is not installed.
+  Package xserver-xorg-core-hwe-18.04 which provides xserver-xorg-core is to be removed.
+  Package xserver-xorg-core-hwe-18.04 is to be removed.
+
+(Reading database ... 315195 files and directories currently installed.)
+Removing xserver-xorg-core-hwe-18.04 (2:1.20.8-2ubuntu2.2~18.04.6) ...
+Selecting previously unselected package xserver-xorg-core.
+(Reading database ... 315157 files and directories currently installed.)
+Preparing to unpack .../xserver-xorg-core_2%3a1.19.6-1ubuntu4.10_amd64.deb ...
+Unpacking xserver-xorg-core (2:1.19.6-1ubuntu4.10) ...
+Selecting previously unselected package xserver-xorg-input-libinput.
+Preparing to unpack .../xserver-xorg-input-libinput_0.27.1-1_amd64.deb ...
+Unpacking xserver-xorg-input-libinput (0.27.1-1) ...
+Selecting previously unselected package xserver-xorg-input-all.
+Preparing to unpack .../xserver-xorg-input-all_1%3a7.7+19ubuntu7.1_amd64.deb ...
+Unpacking xserver-xorg-input-all (1:7.7+19ubuntu7.1) ...
+Selecting previously unselected package xserver-xorg-input-wacom.
+Preparing to unpack .../xserver-xorg-input-wacom_1%3a0.36.1-0ubuntu1.1_amd64.deb ...
+Unpacking xserver-xorg-input-wacom (1:0.36.1-0ubuntu1.1) ...
+Setting up xserver-xorg-core (2:1.19.6-1ubuntu4.10) ...
+Setting up xserver-xorg-input-wacom (1:0.36.1-0ubuntu1.1) ...
+Setting up xserver-xorg-input-libinput (0.27.1-1) ...
+Setting up xserver-xorg-input-all (1:7.7+19ubuntu7.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+
+
+
+
+
+
+
+before
+
+Jul  4 11:44:28 sy kernel: [  864.988449] usb 1-8: new low-speed USB device number 6 using xhci_hcd
+Jul  4 11:44:29 sy kernel: [  865.144435] usb 1-8: New USB device found, idVendor=09da, idProduct=2268, bcdDevice= 1.02
+Jul  4 11:44:29 sy kernel: [  865.144441] usb 1-8: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Jul  4 11:44:29 sy kernel: [  865.144445] usb 1-8: Product: USB Keyboard
+Jul  4 11:44:29 sy kernel: [  865.144447] usb 1-8: Manufacturer: SONiX
+Jul  4 11:44:29 sy kernel: [  865.151181] input: SONiX USB Keyboard as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0007/input/input34
+Jul  4 11:44:29 sy kernel: [  865.209166] hid-generic 0003:09DA:2268.0007: input,hidraw1: USB HID v1.11 Keyboard [SONiX USB Keyboard] on usb-0000:00:14.0-8/input0
+Jul  4 11:44:29 sy kernel: [  865.212719] input: SONiX USB Keyboard Consumer Control as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input35
+Jul  4 11:44:29 sy kernel: [  865.272842] input: SONiX USB Keyboard System Control as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input36
+Jul  4 11:44:29 sy kernel: [  865.273253] hid-generic 0003:09DA:2268.0008: input,hidraw2: USB HID v1.11 Device [SONiX USB Keyboard] on usb-0000:00:14.0-8/input1
+Jul  4 11:44:29 sy mtp-probe: checking bus 1, device 6: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8"
+Jul  4 11:44:29 sy mtp-probe: bus: 1, device: 6 was not an MTP device
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) config/udev: Adding input device SONiX USB Keyboard (/dev/input/event5)
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) No input driver specified, ignoring this device.
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) This device may have been added with another device file.
+Jul  4 11:44:29 sy upowerd[1449]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0007
+Jul  4 11:44:29 sy upowerd[1449]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) config/udev: Adding input device SONiX USB Keyboard Consumer Control (/dev/input/event6)
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) No input driver specified, ignoring this device.
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) This device may have been added with another device file.
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) config/udev: Adding input device SONiX USB Keyboard System Control (/dev/input/event7)
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) No input driver specified, ignoring this device.
+Jul  4 11:44:29 sy /usr/lib/gdm3/gdm-x-session[1253]: (II) This device may have been added with another device file.
+Jul  4 11:44:29 sy upowerd[1449]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008
+Jul  4 11:44:29 sy upowerd[1449]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1
+Jul  4 11:44:29 sy upowerd[1449]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8
+Jul  4 11:45:07 sy systemd[1]: Starting Cleanup of Temporary Directories...
+Jul  4 11:45:07 sy systemd[1]: Started Cleanup of Temporary Directories.
+
+
+----------------------------------------------------------------------------
+after
+
+
+Jul  4 16:14:01 sy acpid: input device has been disconnected, fd 17
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: removing device SONiX USB Keyboard
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "fd" "50"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: device removed
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) UnloadModule: "libinput"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: releasing fd for 13:69
+Jul  4 16:14:01 sy upowerd[1371]: unhandled action 'unbind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0002
+Jul  4 16:14:01 sy upowerd[1371]: unhandled action 'unbind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0
+Jul  4 16:14:01 sy gnome-shell[1365]: g_array_unref: assertion 'array' failed
+Jul  4 16:14:01 sy acpid: input device has been disconnected, fd 18
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: removing device SONiX USB Keyboard Consumer Control
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "fd" "51"
+Jul  4 16:14:01 sy gnome-shell[1365]: g_array_unref: assertion 'array' failed
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) UnloadModule: "libinput"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: not releasing fd for 13:70, still in use
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: removing device SONiX USB Keyboard Consumer Control
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "fd" "51"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: device removed
+Jul  4 16:14:01 sy gnome-shell[1365]: g_array_unref: assertion 'array' failed
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) UnloadModule: "libinput"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: releasing fd for 13:70
+Jul  4 16:14:01 sy acpid: input device has been disconnected, fd 19
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: removing device SONiX USB Keyboard System Control
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "fd" "52"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: device removed
+Jul  4 16:14:01 sy gnome-shell[1365]: g_array_unref: assertion 'array' failed
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) UnloadModule: "libinput"
+Jul  4 16:14:01 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: releasing fd for 13:71
+Jul  4 16:14:01 sy upowerd[1371]: unhandled action 'unbind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0003
+Jul  4 16:14:01 sy upowerd[1371]: unhandled action 'unbind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1
+Jul  4 16:14:01 sy upowerd[1371]: unhandled action 'unbind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8
+Jul  4 16:14:02 sy kernel: [  517.843716] usb 1-8: new low-speed USB device number 6 using xhci_hcd
+Jul  4 16:14:02 sy kernel: [  517.999394] usb 1-8: New USB device found, idVendor=09da, idProduct=2268, bcdDevice= 1.02
+Jul  4 16:14:02 sy kernel: [  517.999400] usb 1-8: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Jul  4 16:14:02 sy kernel: [  517.999404] usb 1-8: Product: USB Keyboard
+Jul  4 16:14:02 sy kernel: [  517.999407] usb 1-8: Manufacturer: SONiX
+Jul  4 16:14:02 sy kernel: [  518.006418] input: SONiX USB Keyboard as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0007/input/input34
+Jul  4 16:14:02 sy kernel: [  518.064305] hid-generic 0003:09DA:2268.0007: input,hidraw1: USB HID v1.11 Keyboard [SONiX USB Keyboard] on usb-0000:00:14.0-8/input0
+Jul  4 16:14:02 sy kernel: [  518.068031] input: SONiX USB Keyboard Consumer Control as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input35
+Jul  4 16:14:03 sy kernel: [  518.127914] input: SONiX USB Keyboard System Control as /devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input36
+Jul  4 16:14:03 sy kernel: [  518.128324] hid-generic 0003:09DA:2268.0008: input,hidraw2: USB HID v1.11 Device [SONiX USB Keyboard] on usb-0000:00:14.0-8/input1
+Jul  4 16:14:03 sy mtp-probe: checking bus 1, device 6: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8"
+Jul  4 16:14:03 sy mtp-probe: bus: 1, device: 6 was not an MTP device
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: Adding input device SONiX USB Keyboard System Control (/dev/input/event7)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard System Control: Applying InputClass "libinput keyboard catchall"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) Using input driver 'libinput' for 'SONiX USB Keyboard System Control'
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: got fd for /dev/input/event7 13:71 fd 51 paused 0
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard System Control: always reports core events
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "Device" "/dev/input/event7"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "_source" "server/udev"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: device is a keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: device removed
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input36/event7"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) XINPUT: Adding extended input device "SONiX USB Keyboard System Control" (type: KEYBOARD, id 13)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "xkb_layout" "us"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event7  - SONiX USB Keyboard System Control: device is a keyboard
+Jul  4 16:14:03 sy upowerd[1371]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008
+Jul  4 16:14:03 sy upowerd[1371]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: Adding input device SONiX USB Keyboard Consumer Control (/dev/input/event6)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) Using input driver 'libinput' for 'SONiX USB Keyboard Consumer Control'
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 52 paused 0
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: always reports core events
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "Device" "/dev/input/event6"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "_source" "server/udev"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: device is a keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: device removed
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) libinput: SONiX USB Keyboard Consumer Control: needs a virtual subdevice
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input35/event6"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) XINPUT: Adding extended input device "SONiX USB Keyboard Consumer Control" (type: MOUSE, id 14)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "AccelerationScheme" "none"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: (accel) selected scheme none/0
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: (accel) acceleration factor: 2.000
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: (accel) acceleration threshold: 4
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event6  - SONiX USB Keyboard Consumer Control: device is a keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) Using input driver 'libinput' for 'SONiX USB Keyboard Consumer Control'
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: returning pre-existing fd for /dev/input/event6 13:70
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard Consumer Control: always reports core events
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "Device" "/dev/input/event6"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "_source" "_driver/libinput"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) libinput: SONiX USB Keyboard Consumer Control: is a virtual subdevice
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.1/0003:09DA:2268.0008/input/input35/event6"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) XINPUT: Adding extended input device "SONiX USB Keyboard Consumer Control" (type: KEYBOARD, id 15)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "xkb_layout" "us"
+Jul  4 16:14:03 sy upowerd[1371]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0007
+Jul  4 16:14:03 sy upowerd[1371]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) config/udev: Adding input device SONiX USB Keyboard (/dev/input/event5)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard: Applying InputClass "libinput keyboard catchall"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) Using input driver 'libinput' for 'SONiX USB Keyboard'
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 67 paused 0
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) SONiX USB Keyboard: always reports core events
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "Device" "/dev/input/event5"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "_source" "server/udev"
+Jul  4 16:14:03 sy upowerd[1371]: unhandled action 'bind' on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-8
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: device is a keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: device removed
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-8/1-8:1.0/0003:09DA:2268.0007/input/input34/event5"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) XINPUT: Adding extended input device "SONiX USB Keyboard" (type: KEYBOARD, id 19)
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (**) Option "xkb_layout" "us"
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: is tagged by udev as: Keyboard
+Jul  4 16:14:03 sy /usr/lib/gdm3/gdm-x-session[1224]: (II) event5  - SONiX USB Keyboard: device is a keyboard
+Jul  4 16:15:28 sy systemd-resolved[710]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 114.114.114.114.
+Jul  4 16:17:01 sy CRON[2677]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)

@@ -1,0 +1,3 @@
+watch grep -e Dirty: -e Writeback: /proc/meminfo
+
+Linux文件系统缓存，‘脏’块数据，接近0时，U盘写入完成。

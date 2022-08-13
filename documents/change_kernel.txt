@@ -1,0 +1,6 @@
+change /etc/default/grub
+add these 
+
+
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
